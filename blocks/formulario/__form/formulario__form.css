@@ -1,0 +1,9 @@
+.formulario__form{
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    background-color:#fff;
+    border: 1px solid red;
+    border-radius: 8px;
+    
+}

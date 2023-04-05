@@ -9,13 +9,17 @@
 </head>
 <body class="root">
     <div class="container">
+        <!-- INICIO HEADER -->
         <header class="header">
             <img class="header__logo" src="./images/Telsur_logo_2019.svg.png" alt="" class="logo">
             <button class="header__btn-edit">Editar</button>
         </header>
+        
         <main class="main">
             <h1 class="main__title">Guardias</h1>
         </main>
+        <!-- FIN HEADER -->
+        <!-- INICIO CARD CONTAINER -->
         <section class="card">
             <div class="card-container">
                 <h2 class="card__title">Guardia Subtel</h2>
@@ -41,26 +45,47 @@
                     <h2 class="card__phone-number">+56967603409</h2>
                 </div>
             </div>
-            <!-- INICIO DE FORMULARIO -->
-            <section class="formulario">
-                <form class="form" action="#">
-                    <h1 class="editar">Edición</h1>
-                </form>
-            </section>
-            <!-- TERMINO DE FORMULARIO -->
+            <!-- FIN CARD CONTAINER -->
+            
         </section>
-        <footer class="footer">
-            <pre>@2023 Jorge Sepúlveda Turpie - Especialista Monitoreo y Control (CMC)</pre>
-        </footer>
         
+        <!-- INICIO DE FOOTER -->
+        <footer class="footer">
+            <p><pre>@2023 Jorge Sepúlveda Turpie </p><p>Especialista Monitoreo y Control (CMC)</p></pre>
+        </footer>
+        <!-- FIN DE FOOTER -->
+        <!-- INICIO PIE BANNER -->
+        <section class="banner">
+            <img class="banner__logo" src="" alt="" class="banner__image">
+            <img class="banner__logo" src="" alt="" class="banner__image">
+            <img class="banner__logo" src="" alt="" class="banner__image">
+            <img class="banner__logo" src="" alt="" class="banner__image">
+            <img class="banner__logo" src="" alt="" class="banner__image">
+        </section>
+        <!-- FIN PIE BANNER -->
+       
     </div>
-    <section class="banner">
-        <img class="banner__logo" src="" alt="" class="banner__image">
-        <img class="banner__logo" src="" alt="" class="banner__image">
-        <img class="banner__logo" src="" alt="" class="banner__image">
-        <img class="banner__logo" src="" alt="" class="banner__image">
-        <img class="banner__logo" src="" alt="" class="banner__image">
+     <!-- INICIO DE FORMULARIO -->
+     <section class="formulario">
+         <form class="formulario__form" action="#">
+            <h1 class="editar">Edición</h1>
+            <h2 class="btn__cerrar">X</h2>
+            <div class="formulario__selectores">
+                <select class="formulario__select" name="" id="">
+                    <option value="">Subtel</option>
+                    <option value="">Guardia B</option>
+                    <option value="">Guardia C</option>
+                </select>
+                <select name="" id="">
+                    <option value="">Nombres</option>
+                    <option value="">Guardia B</option>
+                    <option value="">Guardia C</option>
+                </select>
+            </div>
+            <button class="formulario__btn" type="submit">Guardar</button>
+        </form>
     </section>
+    <!-- TERMINO DE FORMULARIO -->
     <script src="js/index.js"></script>
 </body>
 </html>
