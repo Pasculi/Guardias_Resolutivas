@@ -7,6 +7,5 @@
     position: absolute;
     top:0;
     background-color: rgba(24, 22, 22, 0.432);
-    
-
+    transition: all 1s ease .5;
 }

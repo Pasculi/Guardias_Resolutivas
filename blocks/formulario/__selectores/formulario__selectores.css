@@ -1,9 +1,8 @@
 .formulario__selectores{
     display: flex;
-    width: 50%;
+    width: fit-content;
     height: 50px;
     gap:10px;
     flex-direction:column ;
-    justify-content: center;
-    align-items: center;
+    padding-left: 30px;
 }

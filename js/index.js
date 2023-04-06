@@ -11,3 +11,4 @@ function cerrarGuardias(){
     formulario.style.display = 'none';
 }
 btnCerrar.addEventListener('click', cerrarGuardias);
+
