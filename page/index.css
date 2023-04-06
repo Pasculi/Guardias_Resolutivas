@@ -33,8 +33,10 @@
 
 /*MODAL FORMULARIO*/
 @import url('../blocks/formulario/formulario.css');
+@import url('../blocks/formulario/__editar/formulario__editar.css');
 @import url('../blocks/formulario/__form/formulario__form.css');
 @import url('../blocks/formulario/__selectores/formulario__selectores.css');
+@import url('../blocks/formulario/__btn-cerrar/formulario__btn-cerrar.css');
 @import url('../blocks/formulario/__btn/formulario__btn.css');
 
 

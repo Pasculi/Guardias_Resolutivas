@@ -6,6 +6,8 @@
     padding:8px 10px;
     border-radius: 3px;
     border: none;
+    margin-left:30px;
+    margin-bottom: 15px;;
 }
 .formulario__btn:hover{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
