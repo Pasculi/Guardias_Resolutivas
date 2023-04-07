@@ -1,115 +1,195 @@
 <!--   -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Emergencias</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Emergencias</title>
 
-  <link rel="stylesheet" href="css/estilos.css">
-  <link rel="shortcut icon" href="img/auricular.png">
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="shortcut icon" href="img/auricular.png" />
+  </head>
+  <body>
+    <img src="img/ajustes.png" alt="" class="milogo" id="modal-btn" />
 
-</head>
-<body>
-
-  
-
-
-  <img src="img/ajustes.png" alt="" class="milogo"  id="modal-btn">
-  
-  
-  <div id="titulo">
+    <div id="titulo">
       <p id="titulo_cuerpo">GUARDIAS</p>
-  </div>
-
-  <section>
-
-    <div class="contenedor" id="uno">
-      <h1 class="titulo_grupo">SUBTEL</h1>
-      
-      <p id="nombreobtenidox" class="subtitulo_guardia">Seleccione Guardia</p>
     </div>
 
-    <div class="contenedor_separador" id="dos">
-      <img class="icon" src="">
-    </div>
+    <section>
+      <div class="contenedor" id="uno">
+        <h1 class="titulo_grupo">SUBTEL</h1>
 
-    <div class="contenedor" id="tres">
-      <h1 class="titulo_grupo">GUARDIA B.</h1>
-      
-      <p id="nombreobtenidoy" class="subtitulo_guardia2">Seleccione Guardia</p>
-    </div>
-
-    <div class="contenedor_separador" id="cuatro">
-      <img class="icon" src="">
-    </div>
-
-    <div class="contenedor" id="cinco">
-      <h1 class="titulo_grupo">GUARDIA C.</h1>
-      
-      <p id="nombreobtenidoz" class="subtitulo_guardia">Seleccione Guardia</p>
-    </div>
-<P align="Left">
-<p> <font size=6>&#174;JALBERDI  </font></p>
-  </section>
-
-  <img src="img/portada.png" alt="" class="miportada" id="mi_portada">
-
-
-<header>
-
-  <div id="my-modal" class="modal">
-    <div class="contenido-modal">
-
-      <form class="miformulario" name="formulario_de_seleccion" id="mi_form" action="#" >
-   
-        <span class="close">&times;</span>
-        <h2>ASIGNACIÃ“N DE GUARDIAS</h2>
-
-        
-
-        <select class="seleccion1" name="seleccionado" size="3"onchange="cambia()">
-
-            <h1>Guardias:</h1>
-            <option value="0">SELECIONE:
-            <option value="1">Guardia Subtel
-            <option value="2">Guardia B.
-            <option value="3">Guardia C.          
-        
-        </select>
-      
-        <select class="seleccion1" name="opt" id="opt" size="3">
-          <option value="-">-
-        </select>
-
-        <input class="miboton" type="button" name="btn1" value="Asignar" onclick="obtenerdatos()">
-
-    
-    
-        </form>
-
+        <p id="nombreobtenidox" class="subtitulo_guardia">Seleccione Guardia</p>
       </div>
-    </div>
-  
-</header>
 
-  <script type="text/javascript">123456
-  
+      <div class="contenedor_separador" id="dos">
+        <img class="icon" src="" />
+      </div>
+
+      <div class="contenedor" id="tres">
+        <h1 class="titulo_grupo">GUARDIA B.</h1>
+
+        <p id="nombreobtenidoy" class="subtitulo_guardia2">
+          Seleccione Guardia
+        </p>
+      </div>
+
+      <div class="contenedor_separador" id="cuatro">
+        <img class="icon" src="" />
+      </div>
+
+      <div class="contenedor" id="cinco">
+        <h1 class="titulo_grupo">GUARDIA C.</h1>
+
+        <p id="nombreobtenidoz" class="subtitulo_guardia">Seleccione Guardia</p>
+      </div>
+      <p align="Left"></p>
+      <p><font size="6">&#174;JALBERDI </font></p>
+    </section>
+
+    <img src="img/portada.png" alt="" class="miportada" id="mi_portada" />
+
+    <header>
+      <div id="my-modal" class="modal">
+        <div class="contenido-modal">
+          <form
+            class="miformulario"
+            name="formulario_de_seleccion"
+            id="mi_form"
+            action="#"
+          >
+            <span class="close">&times;</span>
+            <h2>ASIGNACIÃ“N DE GUARDIAS</h2>
+
+            <select
+              class="seleccion1"
+              name="seleccionado"
+              size="3"
+              onchange="cambia()"
+            >
+              <h1>Guardias:</h1>
+              <option value="0">SELECIONE:</option>
+              <option value="1">Guardia Subtel</option>
+              <option value="2">Guardia B.</option>
+              <option value="3">Guardia C.</option>
+            </select>
+
+            <select class="seleccion1" name="opt" id="opt" size="3">
+              <option value="-">-</option>
+            </select>
+
+            <input
+              class="miboton"
+              type="button"
+              name="btn1"
+              value="Asignar"
+              onclick="obtenerdatos()"
+            />
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <script type="text/javascript">
+      123456;
 
       //1) Definir Las Variables Correspondintes
       var seleccionado;
       var opt;
-      
-              // Get DOM Elements
-      const modal = document.querySelector('#my-modal');
-      const modalBtn = document.querySelector('#modal-btn');
-      const closeBtn = document.querySelector('.close');
 
-      const titulocuerpo = document.querySelector('#titulo_cuerpo');
+      // Get DOM Elements
+      const modal = document.querySelector("#my-modal");
+      const modalBtn = document.querySelector("#modal-btn");
+      const closeBtn = document.querySelector(".close");
 
-      var opt_1 = new Array ("-", "Raul Caulier <br/> +569 67605441", "Manuel Araneda <br/> +56967603409", "Patricio Ortega <br/> +5697391120", "Erwin Eggers <br/> +56983410816","...");
-      var opt_2 = new Array ("-", "Andrea Burgos <br/> +56967603275", "Marcelo Sandoval <br/> +56997391027", "Mario Colihueque <br/> +56967604831", "Patricio Ortega <br/> +5697391120", "...");
-      var opt_3 = new Array ("-", "Rodrigo Soriano <br/> +56982661596", "Mario Colihueque <br/> +56967604831", "Oscar Vivar <br/> +5697391175","Ricardo Riebel <br/> +5698282252", "Patricio Ortega <br/> +5697391120", "Marcelo Sandoval <br/> +56997391027", "...");
+      const titulocuerpo = document.querySelector("#titulo_cuerpo");
 
-      
+      var opt_1 = new Array(
+        "-",
+        "Raul Caulier <br/> +569 67605441",
+        "Manuel Araneda <br/> +56967603409",
+        "Patricio Ortega <br/> +5697391120",
+        "Erwin Eggers <br/> +56983410816",
+        "..."
+      );
+      var opt_2 = new Array(
+        "-",
+        "Andrea Burgos <br/> +56967603275",
+        "Marcelo Sandoval <br/> +56997391027",
+        "Mario Colihueque <br/> +56967604831",
+        "Patricio Ortega <br/> +5697391120",
+        "..."
+      );
+      var opt_3 = new Array(
+        "-",
+        "Rodrigo Soriano <br/> +56982661596",
+        "Mario Colihueque <br/> +56967604831",
+        "Oscar Vivar <br/> +5697391175",
+        "Ricardo Riebel <br/> +5698282252",
+        "Patricio Ortega <br/> +5697391120",
+        "Marcelo Sandoval <br/> +56997391027",
+        "..."
+      );
+      // 2) crear una funcion que permita ejecutar el cambio dinamico
+
+      function cambia() {
+        //Se toma el vamor de la "seleccionado seleccionada"
+        seleccionado =
+          document.formulario_de_seleccion.seleccionado[
+            document.formulario_de_seleccion.seleccionado.selectedIndex
+          ].value;
+        //se chequea si la "seleccionado" esta definida
+        if (seleccionado != 0) {
+          //selecionamos las seleccionados Correctas
+          mis_opts = eval("opt_" + seleccionado);
+          //se calcula el numero de seleccionados
+          num_opts = mis_opts.length;
+          //marco el numero de opt en el select
+          document.formulario_de_seleccion.opt.length = num_opts;
+          //para cada opt del array, la pongo en el select
+          for (i = 0; i < num_opts; i++) {
+            document.formulario_de_seleccion.opt.options[i].value = mis_opts[i];
+            document.formulario_de_seleccion.opt.options[i].text = mis_opts[i];
+          }
+        } else {
+          //si no habia ninguna opt seleccionada, elimino las seleccionados del select
+          document.formulario_de_seleccion.opt.length = 1;
+          //ponemos un guion en la unica opt que he dejado
+          document.formulario_de_seleccion.opt.options[0].value = "-";
+          document.formulario_de_seleccion.opt.options[0].text = "-";
+        }
+        //hacer un reset de las opts
+        document.formulario_de_seleccion.opt.options[0].selected = true;
+      }
+
+      function obtenerdatos() {
+        opt = document.getElementById("opt").value;
+
+        if (seleccionado == 1)
+          document.getElementById("nombreobtenidox").innerHTML = opt;
+        if (seleccionado == 2)
+          document.getElementById("nombreobtenidoy").innerHTML = opt;
+        if (seleccionado == 3)
+          document.getElementById("nombreobtenidoz").innerHTML = opt;
+      }
+
+      // Events
+      modalBtn.addEventListener("click", openModal);
+      closeBtn.addEventListener("click", closeModal);
+
+      // Open
+      function openModal() {
+        modal.style.display = "block";
+        titulocuerpo.style.opacity = "0";
+      }
+
+      // Close
+      function closeModal() {
+        modal.style.display = "none";
+        titulocuerpo.style.opacity = "1";
+      }
+    </script>
+  </body>
+</html>
