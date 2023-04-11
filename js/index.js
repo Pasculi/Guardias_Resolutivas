@@ -46,29 +46,57 @@ const tipoGuard = tipoGuardia.map((item) => {
   optionElement.text = item.nombre;
   selectGuardia.appendChild(optionElement);
 
-  console.log(item);
+  /* console.log(item); */
 });
+/*Seleccionar tipo de guardia, para llenar select con nombres */
 
-const nombre = document.querySelectorAll(".tipo_guardia");
-console.log(nombre.text);
+const optionGuardia = document.querySelector("#tipo_guardia");
 
-const nameGuard = personas.map((element) => {
-  const optionName = document.createElement("option");
-  optionName.classList.add("name_guardia");
-  optionName.value = element.id;
-  optionName.text = element.nombre;
-  nombreGuardia.appendChild(optionName);
-  console.log(element);
-});
+/*Funcion que captura el evento, y registramos el valor del select tipo_Guardia*/
+
+function optionGuard(e) {
+
+  const optionSelect = optionGuardia.options[optionGuardia.selectedIndex];
+  console.log(optionSelect);
+  const valor = parseInt(optionSelect.value);
+  console.log(valor);
+
+  /*Funcion donde creamos el filtro para ser mostrado en el select de name__Guardia */
+
+  function filtrarPersonas(valor) {
+    const nameGuard = personas.filter((persona) => persona.guardiaId === valor);
+    /* console.log(typeof nameGuard); */
+    nameGuard.map((element) => {
+      const optionName = document.createElement("option");
+      optionName.classList.add("name_guardia");
+      optionName.value = element.id;
+      optionName.text = element.nombre;
+      nombreGuardia.appendChild(optionName);
+    });
+  }
+  filtrarPersonas(valor);
+}
+selectGuardia.addEventListener("change", optionGuard);
+
+/*Limpiar select */
+
+/* clear
+ */
 
 
+const nombre = document.querySelector("#nombre_guardia");
+function optionNombre(e) {
+  const optionSelect = nombre.options[nombre.selectedIndex];
+  console.log(optionSelect.text);
+  console.log(optionSelect.value);
+}
+nombre.addEventListener("change", optionNombre);
 
-
-const btn_cambiarGuardia = decument.querySelector(".formulario__btn");
+const btn_cambiarGuardia = document.querySelector(".formulario__btn");
 
 function cambiarGuardia(e) {
   e.preventDefault();
   const seleccion = selectGuardia.value;
   console.log(seleccion);
 }
-btn_cambiarGuardia.addEventListener("change", cambiarGuardia);
+btn_cambiarGuardia.addEventListener("submit", cambiarGuardia);
