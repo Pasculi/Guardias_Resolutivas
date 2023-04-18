@@ -18,6 +18,7 @@ const tipoGuardia = [
     { id: 3, nombre: "Guardia C" },
 ];
 
+
 const personas = [
     { guardiaId: 1, id: 1, nombre: "Raul Caulier", telefono: "+56967605441" },
     { guardiaId: 1, id: 2, nombre: "Manuel Araneda", telefono: "+56967603409" },
@@ -55,13 +56,13 @@ const optionGuardia = document.querySelector("#tipo_guardia");
 /*Funcion que captura el evento, y registramos el valor del select tipo_Guardia*/
 
 function optionGuard(e) {
-
+    let data = 0;
     const optionSelect = optionGuardia.options[optionGuardia.selectedIndex];
     console.log(optionSelect);
     const valor = parseInt(optionSelect.value);
 
     console.log(valor);
-    const data = valor;
+    data = valor;
     console.log("Estos es igual a valor=" + data);
 
     /*Funcion donde creamos el filtro para ser mostrado en el select de name__Guardia */
@@ -78,9 +79,10 @@ function optionGuard(e) {
         });
     }
     filtrarPersonas(data);
+    
 }
 selectGuardia.addEventListener("change", optionGuard);
-optionGuardia = "0";
+
 
 /*Limpiar select */
 
@@ -88,7 +90,7 @@ optionGuardia = "0";
  */
 
 
-const nombre = document.querySelector("#nombre_guardia");
+/* const nombre = document.querySelector("#nombre_guardia");
 function optionNombre() {
     const optionSelect = nombre.options[nombre.selectedIndex];
     console.log(optionSelect.text);
@@ -104,3 +106,10 @@ function cambiarGuardia(e) {
     console.log(seleccion);
 }
 btn_cambiarGuardia.addEventListener("submit", cambiarGuardia);
+ */
+
+
+const arr = personas.forEach(function (person) {
+    return person.guardiaId === 3; 
+})
+console.log(arr);
