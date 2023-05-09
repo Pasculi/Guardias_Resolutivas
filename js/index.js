@@ -65,7 +65,7 @@ function optionGuard(e) {
 
   function filtrarPersonas(valor) {
     const nameGuard = personas.filter((persona) => persona.guardiaId === valor);
-    /* console.log(typeof nameGuard); */
+    console.log(nameGuard);
     nameGuard.map((element) => {
       const optionName = document.createElement("option");
       optionName.classList.add("name_guardia");
@@ -75,7 +75,9 @@ function optionGuard(e) {
     });
   }
   filtrarPersonas(valor);
+  
 }
+
 selectGuardia.addEventListener("change", optionGuard);
 
 /*Limpiar select */
@@ -84,7 +86,7 @@ selectGuardia.addEventListener("change", optionGuard);
  */
 
 
-const nombre = document.querySelector("#nombre_guardia");
+/* const nombre = document.querySelector("#nombre_guardia");
 function optionNombre(e) {
   const optionSelect = nombre.options[nombre.selectedIndex];
   console.log(optionSelect.text);
@@ -99,4 +101,4 @@ function cambiarGuardia(e) {
   const seleccion = selectGuardia.value;
   console.log(seleccion);
 }
-btn_cambiarGuardia.addEventListener("submit", cambiarGuardia);
+btn_cambiarGuardia.addEventListener("submit", cambiarGuardia); */

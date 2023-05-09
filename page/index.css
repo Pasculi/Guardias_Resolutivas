@@ -46,3 +46,4 @@
 
 /*BANNER*/
 @import url('../blocks/banner/banner.css');
+@import url('../blocks/banner/__logo/banner__logo.css');
