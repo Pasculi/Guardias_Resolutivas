@@ -67,7 +67,6 @@ function optionGuard(e) {
 
     /*Funcion donde creamos el filtro para ser mostrado en el select de name__Guardia */
 
-<<<<<<< HEAD
   function filtrarPersonas(valor) {
     const nameGuard = personas.filter((persona) => persona.guardiaId === valor);
     console.log(nameGuard);
@@ -81,63 +80,6 @@ function optionGuard(e) {
   }
   filtrarPersonas(valor);
   
-=======
-    function filtrarPersonas(data) {
-        const nameGuard = personas.filter((persona) => persona.guardiaId === data);
-        /* console.log(typeof nameGuard); */
-        nameGuard.map((element) => {
-            const optionName = document.createElement("option");
-            optionName.classList.add("name_guardia");
-            optionName.value = element.id;
-            optionName.text = element.nombre;
-            nombreGuardia.appendChild(optionName);
-        });
-    }
-    filtrarPersonas(data);
-    
->>>>>>> 542288f0459bd866f896c62bb8de0acaadd4f4f6
 }
 
 selectGuardia.addEventListener("change", optionGuard);
-
-
-/*Limpiar select */
-
-/* clear
- */
-
-
-/* const nombre = document.querySelector("#nombre_guardia");
-<<<<<<< HEAD
-function optionNombre(e) {
-  const optionSelect = nombre.options[nombre.selectedIndex];
-  console.log(optionSelect.text);
-  console.log(optionSelect.value);
-=======
-function optionNombre() {
-    const optionSelect = nombre.options[nombre.selectedIndex];
-    console.log(optionSelect.text);
-    console.log(optionSelect.value);
->>>>>>> 542288f0459bd866f896c62bb8de0acaadd4f4f6
-}
-nombre.addEventListener("change", optionNombre);
-
-const btn_cambiarGuardia = document.querySelector(".formulario__btn");
-
-function cambiarGuardia(e) {
-    e.preventDefault();
-    const seleccion = selectGuardia.value;
-    console.log(seleccion);
-}
-<<<<<<< HEAD
-btn_cambiarGuardia.addEventListener("submit", cambiarGuardia); */
-=======
-btn_cambiarGuardia.addEventListener("submit", cambiarGuardia);
- */
-
-
-const arr = personas.forEach(function (person) {
-    return person.guardiaId === 3; 
-})
-console.log(arr);
->>>>>>> 542288f0459bd866f896c62bb8de0acaadd4f4f6
