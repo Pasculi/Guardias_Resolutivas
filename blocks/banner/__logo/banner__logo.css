@@ -1,5 +1,15 @@
 .banner__logo{
     width:fit-content;
     height:80px;
-    padding:5px;
+    padding-top:8px;
+   
 }
+
+.banner__logo-telsur{
+    height:70px;
+}
+
+.banner__logo-principal{
+    height:70px;
+}
+

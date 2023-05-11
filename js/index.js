@@ -83,3 +83,30 @@ function optionGuard(e) {
 }
 
 selectGuardia.addEventListener("change", optionGuard);
+
+/*FECHA ACTUAL EN FORMATO ESPAÑOL */
+function dateNow(){
+  const fechaActual = document.querySelector('.fecha');
+  // Creamos array con los meses del año
+const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+// Creamos array con los días de la semana
+const dias_semana = ['Domingo', 'Lunes', 'martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+// Creamos el objeto fecha instanciándolo con la clase Date
+const fecha = new Date();
+// Construimos el formato de salida
+fechaActual.innerHTML = (dias_semana[fecha.getDay()] + ', ' + fecha.getDate() + ' de ' + meses[fecha.getMonth()] + ' de ' + fecha.getUTCFullYear());
+}
+dateNow()
+
+
+function pintarCard(){
+  const fecha = new Date();
+  const dateFormated = (fecha.toLocaleDateString());
+  console.log(dateFormated);
+  if (dateFormated === '12/5/2023'){
+    console.log('Fechas son iguales');
+  }else{
+    console.log('Fechas son distintos');
+  }
+}
+pintarCard()
