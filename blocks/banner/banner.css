@@ -1,7 +1,8 @@
 .banner{
     display: flex;
-    justify-content: space-around;
-    background-color: var(--color-azul-oscuro);
+    justify-content: space-evenly;
+    background-color: var(--color-fondo-secundario);
     min-width: 100%;
     height: 80px;
+    margin-bottom:50px;
 }
