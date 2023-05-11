@@ -86,7 +86,7 @@ selectGuardia.addEventListener("change", optionGuard);
 
 /*FECHA ACTUAL EN FORMATO ESPAÑOL */
 function dateNow(){
-  const fechaActual = document.querySelector('.fecha');
+  const fechaActual = document.querySelector('.header__fecha');
   // Creamos array con los meses del año
 const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 // Creamos array con los días de la semana
