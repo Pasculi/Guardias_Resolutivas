@@ -41,13 +41,13 @@ const selectGuardia = document.querySelector("#tipo_guardia");
 const nombreGuardia = document.querySelector("#nombre_guardia");
 
 const tipoGuard = tipoGuardia.map((item) => {
-    const optionElement = document.createElement("option");
+  const optionElement = document.createElement("option");
     optionElement.classList.add("tipo_guardia");
     optionElement.value = item.id;
     optionElement.text = item.nombre;
     selectGuardia.appendChild(optionElement);
 
-    /* console.log(item); */
+    console.log(item);
 });
 /*Seleccionar tipo de guardia, para llenar select con nombres */
 
@@ -56,6 +56,7 @@ const optionGuardia = document.querySelector("#tipo_guardia");
 /*Funcion que captura el evento, y registramos el valor del select tipo_Guardia*/
 
 function optionGuard(e) {
+  
     let data = 0;
     const optionSelect = optionGuardia.options[optionGuardia.selectedIndex];
     console.log(optionSelect);
@@ -63,11 +64,11 @@ function optionGuard(e) {
 
     console.log(valor);
     data = valor;
-    console.log("Estos es igual a valor=" + data);
-
+    console.log("Estos es igual a valor = " + data);
     /*Funcion donde creamos el filtro para ser mostrado en el select de name__Guardia */
-
-  function filtrarPersonas(valor) {
+   
+    optionName.innerHTML = '';
+    function filtrarPersonas(valor) {
     const nameGuard = personas.filter((persona) => persona.guardiaId === valor);
     console.log(nameGuard);
     nameGuard.map((element) => {
@@ -80,7 +81,9 @@ function optionGuard(e) {
   }
   filtrarPersonas(valor);
   
+  
 }
+
 
 selectGuardia.addEventListener("change", optionGuard);
 
