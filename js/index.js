@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  pintarCard();
+  dateNow();
   listTypeGuard(tipoGuardia);
 });
 
@@ -27,30 +27,30 @@ const tipoGuardia = [
 ];
 
 const subtel = [
-  { guardiaId: 1, id: 1, nombre: "Raul Caulier", telefono: "+56967605441" },
-  { guardiaId: 1, id: 2, nombre: "Manuel Araneda", telefono: "+56967603409" },
-  { guardiaId: 1, id: 3, nombre: "Patricio Ortega", telefono: "+5697391120" },
-  { guardiaId: 1, id: 4, nombre: "Erwin Eggers", telefono: "+56983410816" },
-  { guardiaId: 1, id: 5, nombre: "Daniel Cayuñir", telefono: "+56988888888" },
+  { id: 21, nombre: "Raul Caulier", telefono: "+56967605441" },
+  { id: 22, nombre: "Manuel Araneda", telefono: "+56967603409" },
+  { id: 23, nombre: "Patricio Ortega", telefono: "+5697391120" },
+  { id: 4, nombre: "Erwin Eggers", telefono: "+56983410816" },
+  { id: 5, nombre: "Daniel Cayuñir", telefono: "+56988888888" },
 ];
 const guardB = [
-  { guardiaId: 2, id: 6, nombre: "Andrea Burgos", telefono: "+56967603275" },
-  { guardiaId: 2, id: 7, nombre: "Marcelo Sandoval", telefono: "+56997391027" },
-  { guardiaId: 2, id: 8, nombre: "Mario Colihueque", telefono: "+56967604831" },
-  { guardiaId: 2, id: 3, nombre: "Patricio Ortega", telefono: "+5697391120" },
+  { id: 6, nombre: "Andrea Burgos", telefono: "+56967603275" },
+  { id: 7, nombre: "Marcelo Sandoval", telefono: "+56997391027" },
+  { id: 8, nombre: "Mario Colihueque", telefono: "+56967604831" },
+  { id: 9, nombre: "Patricio Ortega", telefono: "+5697391120" },
 ];
 const guardC = [
-  { guardiaId: 3, id: 9, nombre: "Rodrigo Soriano", telefono: "+56982661596" },
-  { guardiaId: 3, id: 8, nombre: "Mario Colihueque", telefono: "+56967604831" },
-  { guardiaId: 3, id: 10, nombre: "Oscar Vivar", telefono: "+5697391175" },
-  { guardiaId: 3, id: 11, nombre: "Ricardo Riebel", telefono: "+5698282252" },
-  { guardiaId: 3, id: 3, nombre: "Patricio Ortega", telefono: "+5697391120" },
-  { guardiaId: 3, id: 7, nombre: "Marcelo Sandoval", telefono: "+56997391027" },
+  { id: 10, nombre: "Rodrigo Soriano", telefono: "+56982661596" },
+  { id: 11, nombre: "Mario Colihueque", telefono: "+56967604831" },
+  { id: 12, nombre: "Oscar Vivar", telefono: "+5697391175" },
+  { id: 13, nombre: "Ricardo Riebel", telefono: "+5698282252" },
+  { id: 14, nombre: "Patricio Ortega", telefono: "+5697391120" },
+  { id: 15, nombre: "Marcelo Sandoval", telefono: "+56997391027" },
 ];
 
 const listTypeGuard = (tipoGuardia) => {
   tipoGuardia.map((typeGuard) => {
-    console.log(typeGuard);
+
     optionGuard = `<option class='name_guardia' id='${typeGuard.id}'>${typeGuard.nombre}</option>`;
     selectGuardia.innerHTML += optionGuard;
   });
@@ -59,40 +59,64 @@ function optionGuard() {
   const optionSelect = selectGuardia.options[selectGuardia.selectedIndex];
   let valor = parseInt(optionSelect.id);
 
-  console.log(valor);
   switch (valor) {
     case 1:
       recorrerArray(subtel);
+      const nameGuardiaSub = document.querySelector('.card__nombre_Sub')
+      const phoneGuardiaSub = document.querySelector('.card__phone-number_Sub');
+      nameGuardiaSub.textContent = subtel.nombre;
+      phoneGuardiaSub.textContent = subtel.telefono;
       break;
     case 2:
       recorrerArray(guardB);
+      selectNameGuardia()
+      const nameGuardiaB = document.querySelector('.card__nombre_B')
+      const phoneGuardiaB = document.querySelector('.card__phone-number_B');
+      nameGuardiaB.textContent = subtel.nombre;
+      phoneGuardiaB.textContent = subtel.telefono;
       break;
     case 3:
       recorrerArray(guardC);
+      selectNameGuardia()
+      const nameGuardiaC = document.querySelector('.card__nombre_C')
+      const phoneGuardiaC = document.querySelector('.card__phone-number_C');
+      nameGuardiaC.textContent = subtel.nombre;
+      phoneGuardiaC.textContent = subtel.telefono;
       break;
   }
 }
+
 selectGuardia.addEventListener("change", optionGuard);
 
 function capturarIdGuardia() {
   const optionSelect =
     selectNombreGuardia.options[selectNombreGuardia.selectedIndex];
-  let valor = parseInt(optionSelect.id);
-  console.log(valor);
+  let valuer = parseInt(optionSelect.id);
 
-  return valor;
+  selectNameGuardia(valuer)/* +++++ */
+  const idGuardia = document.getElementById(`${valuer}`)
+  console.log(idGuardia);
+  console.log(idGuardia.value);
+  console.log(idGuardia.attributes.name.textContent);
 }
 
 function recorrerArray(data) {
   selectNombreGuardia.innerHTML = "";
   data.map((guardia) => {
-    optionNombreGuard = `<option class='name_guardia' id='${guardia.id}'>${guardia.nombre}</option>`;
+    optionNombreGuard = `<option class='guardia__nombre' name='${guardia.telefono}' id='${guardia.id}'>${guardia.nombre}</option>`;
     selectNombreGuardia.innerHTML += optionNombreGuard;
-    
   });
-
 }
 selectNombreGuardia.addEventListener("change", capturarIdGuardia);
+
+function selectNameGuardia() {
+  const elementoGuardia = Array.from(document.querySelectorAll('.guardia__nombre'));
+
+  elementoGuardia.map((guardia) => {
+    console.log(guardia);
+  })
+}
+
 
 
 
@@ -138,7 +162,7 @@ function dateNow() {
 }
 dateNow();
 
-function pintarCard() {
+/* function pintarCard() {
   const fecha = new Date();
   const dateFormated = fecha.toLocaleDateString();
   console.log(dateFormated);
@@ -148,3 +172,4 @@ function pintarCard() {
     console.log("Fechas son distintos");
   }
 }
+ */
