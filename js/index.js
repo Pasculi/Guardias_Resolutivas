@@ -9,17 +9,7 @@ const btnCerrar = document.querySelector(".formulario__btn-cerrar");
 
 const selectGuardia = document.querySelector("#tipo_guardia");
 const selectNombreGuardia = document.querySelector("#nombre_guardia");
-const optionStart = document.querySelector('.optionStart')
-
-function editGuardias() {
-  formulario.style.display = "flex";
-}
-btnEdit.addEventListener("click", editGuardias);
-
-function cerrarGuardias() {
-  formulario.style.display = "none";
-}
-btnCerrar.addEventListener("click", cerrarGuardias);
+const optionStart = document.querySelector(".optionStart");
 
 const tipoGuardia = [
   { id: 1, nombre: "Guardia Subtel" },
@@ -49,12 +39,22 @@ const guardC = [
   { id: 15, nombre: "Marcelo Sandoval", telefono: "+56997391027" },
 ];
 
+function editGuardias() {
+  formulario.style.display = "flex";
+}
+btnEdit.addEventListener("click", editGuardias);
+
+function cerrarGuardias() {
+  formulario.style.display = "none";
+}
+btnCerrar.addEventListener("click", cerrarGuardias);
+
 const listTypeGuard = (tipoGuardia) => {
   tipoGuardia.map((typeGuard) => {
-
     optionGuard = `<option class='name_guardia' id='${typeGuard.id}'>${typeGuard.nombre}</option>`;
     selectGuardia.innerHTML += optionGuard;
   });
+  console.log(selectGuardia);
 };
 function optionGuard() {
   const optionSelect = selectGuardia.options[selectGuardia.selectedIndex];
@@ -63,26 +63,12 @@ function optionGuard() {
   switch (valor) {
     case 1:
       recorrerArray(subtel);
-      const nameGuardiaSub = document.querySelector('.card__nombre_Sub')
-      const phoneGuardiaSub = document.querySelector('.card__phone-number_Sub');
-      nameGuardiaSub.textContent = subtel.nombre;
-      phoneGuardiaSub.textContent = subtel.telefono;
       break;
     case 2:
       recorrerArray(guardB);
-      selectNameGuardia()
-      const nameGuardiaB = document.querySelector('.card__nombre_B')
-      const phoneGuardiaB = document.querySelector('.card__phone-number_B');
-      nameGuardiaB.textContent = subtel.nombre;
-      phoneGuardiaB.textContent = subtel.telefono;
       break;
     case 3:
       recorrerArray(guardC);
-      selectNameGuardia()
-      const nameGuardiaC = document.querySelector('.card__nombre_C')
-      const phoneGuardiaC = document.querySelector('.card__phone-number_C');
-      nameGuardiaC.textContent = subtel.nombre;
-      phoneGuardiaC.textContent = subtel.telefono;
       break;
   }
 }
@@ -94,8 +80,8 @@ function capturarIdGuardia() {
     selectNombreGuardia.options[selectNombreGuardia.selectedIndex];
   let valuer = parseInt(optionSelect.id);
 
-  selectNameGuardia(valuer)/* +++++ */
-  const idGuardia = document.getElementById(`${valuer}`)
+  selectNameGuardia(valuer); /* +++++ */
+  const idGuardia = document.getElementById(`${valuer}`);
   console.log(idGuardia);
   console.log(idGuardia.value);
   console.log(idGuardia.attributes.name.textContent);
@@ -111,15 +97,57 @@ function recorrerArray(data) {
 selectNombreGuardia.addEventListener("change", capturarIdGuardia);
 
 function selectNameGuardia() {
-  const elementoGuardia = Array.from(document.querySelectorAll('.guardia__nombre'));
+  const elementoGuardia = Array.from(
+    document.querySelectorAll(".guardia__nombre")
+  );
 
   elementoGuardia.map((guardia) => {
     console.log(guardia);
-  })
+  });
+}
+
+function cambiarData() {
+  const optionSelect = selectGuardia.options[selectGuardia.selectedIndex];
+  let valor2 = parseInt(optionSelect.id);
+  console.log(valor2)
+  switch (valor2) {
+    case 1:
+      const nameGuardiaSub = document.querySelector(".card__nombre_Sub");
+      const phoneGuardiaSub = document.querySelector(".card__phone-number_Sub");
+      nameGuardiaSub.innerHTML = subtel.nombre;
+      phoneGuardiaSub.innerHTML = subtel.telefono;
+      console.log(nameGuardiaSub)
+      console.log(phoneGuardiaSub)
+      console.log('opt1')
+      break;
+    case 2:
+      const nameGuardiaB = document.querySelector(".card__nombre_B");
+      const phoneGuardiaB = document.querySelector(".card__phone-number_B");
+      nameGuardiaB.innerHTML = guardB.nombre;
+      phoneGuardiaB.innerHTML = guardB.telefono;
+      console.log(nameGuardiaB)
+      console.log(phoneGuardiaB)
+      console.log('opt2')
+      break;
+    case 3:
+      const nameGuardiaC = document.querySelector(".card__nombre_C");
+      const phoneGuardiaC = document.querySelector(".card__phone-number_C");
+      nameGuardiaC.innerHTML = guardC.nombre;
+      phoneGuardiaC.innerHTML = guardC.telefono;
+      console.log(nameGuardiaC)
+      console.log(phoneGuardiaC)
+      console.log('opt3')
+      break;
+  }
+
 }
 
 
-
+const btn = document.querySelector('.formulario__btn');
+btn.addEventListener('click', (evt) => {
+  evt.preventDefault()
+  cambiarData()
+})
 
 /*FECHA ACTUAL EN FORMATO ESPAÑOL */
 function dateNow() {
