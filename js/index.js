@@ -9,6 +9,7 @@ const btnCerrar = document.querySelector(".formulario__btn-cerrar");
 
 const selectGuardia = document.querySelector("#tipo_guardia");
 const selectNombreGuardia = document.querySelector("#nombre_guardia");
+const optionStart = document.querySelector('.optionStart')
 
 function editGuardias() {
   formulario.style.display = "flex";
