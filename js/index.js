@@ -116,6 +116,7 @@ function cambiarData() {
       const phoneGuardiaSub = document.querySelector(".card__phone-number_Sub");
       nameGuardiaSub.innerHTML = subtel.nombre;
       phoneGuardiaSub.innerHTML = subtel.telefono;
+
       console.log(nameGuardiaSub)
       console.log(phoneGuardiaSub)
       console.log('opt1')
