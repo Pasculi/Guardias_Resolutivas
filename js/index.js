@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-});
+document.addEventListener("DOMContentLoaded", () => {});
 
 const formulario = document.querySelector(".formulario");
 const btnEdit = document.querySelector(".header__btn-edit");
@@ -8,8 +6,7 @@ const btnCerrar = document.querySelector(".formulario__btn-cerrar");
 
 const tipoGuardia = document.querySelector("#tipo_guardia");
 const nombreGuardia = document.querySelector("#nombre_guardia");
-const selectGuardia = document.querySelectorAll(".selectGuardia")
-
+const optGuardia = document.querySelector(".opt_guardia");
 
 function editGuardias() {
   formulario.style.display = "flex";
@@ -43,23 +40,21 @@ const guardC = [
   { id: 15, nombre: "Marcelo Sandoval", telefono: "+56997391027" },
 ];
 
-function recorrerArray(array){
-  nombreGuardia.innerHTML =` <option class="optionStart" selected disable id="Seleccionar">--Seleccionar--</option>`;
-  array.map(arr => {
-    console.log(`${arr.nombre}  ${arr.telefono}`);
-    const creaOption = `<option class="opt__guardia" id="${arr.telefono}">${arr.nombre}</option>`;
+function recorrerArray(array) {
+  nombreGuardia.innerHTML = ` <option class="optionStart" selected disable id="Seleccionar">--Seleccionar--</option>`;
+  array.map((arr) => {    
+    const creaOption = `<option class="opt__guardia" id="${arr.id}" name="${arr.telefono}" >${arr.nombre}</option>`;
     nombreGuardia.innerHTML += `${creaOption}`;
   });
 }
-
 function optionGuard() {
   const optionSelect = tipoGuardia.options[tipoGuardia.selectedIndex];
-  console.log(optionSelect)
+
   let valor = parseInt(optionSelect.id);
-  console.log(valor)
+
   switch (valor) {
     case 1:
-      recorrerArray(subtel);
+      recorrerArray(subtel); 
       break;
     case 2:
       recorrerArray(guardB);
@@ -70,6 +65,17 @@ function optionGuard() {
   }
 }
 tipoGuardia.addEventListener("change", optionGuard);
+/* REVISAR */
+nombreGuardia.addEventListener("change",(evt)=>{
+  const optionSel = optGuardia.options[optGuardia.selectedIndex];
+  let valors = parseInt(optionSel.id);
+  console.log(valors)
+  console.log(evt.target)
+  console.log(evt.target.value)
+  console.log(evt.attributes.name)
+})
+
+
 
 /*FECHA ACTUAL EN FORMATO ESPAÑOL */
 function dateNow() {
