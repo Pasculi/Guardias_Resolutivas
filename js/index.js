@@ -66,16 +66,43 @@ function optionGuard() {
 }
 tipoGuardia.addEventListener("change", optionGuard);
 /* REVISAR */
-nombreGuardia.addEventListener("change",(evt)=>{
-  const optionSel = optGuardia.options[optGuardia.selectedIndex];
-  let valors = parseInt(optionSel.id);
-  console.log(valors)
-  console.log(evt.target)
-  console.log(evt.target.value)
-  console.log(evt.attributes.name)
+nombreGuardia.addEventListener("change",()=>{
+  const optionSel = nombreGuardia.options[nombreGuardia.selectedIndex];
+  let optId = parseInt(optionSel.id);
+  let optNombre = optionSel.value;
+  const phoneOpt = optionSel.attributes.name.textContent;
+  console.log(optId)
+  console.log(optNombre)
+  console.log(phoneOpt)
+
+  const optionSelect = tipoGuardia.options[tipoGuardia.selectedIndex];
+
+  let valor2 = parseInt(optionSelect.id);
+  switch(valor2){
+    case 1:
+      console.log('Subtel')
+      const nameGuardiaSub = document.querySelector('.card__nombre_Sub')
+      const phoneGuardiaSub = document.querySelector('.card__phone-number_Sub');
+      nameGuardiaSub.textContent = optNombre;
+      phoneGuardiaSub.textContent = phoneOpt
+      break;
+    case 2:
+      console.log('Guardia B')
+      const nameGuardiaB = document.querySelector('.card__nombre_B')
+      const phoneGuardiaB = document.querySelector('.card__phone-number_B');
+      nameGuardiaB.textContent = optNombre;
+      phoneGuardiaB.textContent = phoneOpt
+      break;
+    case 3:
+      console.log('Guardia C')
+      const nameGuardiaC = document.querySelector('.card__nombre_C')
+      const phoneGuardiaC = document.querySelector('.card__phone-number_C');
+      nameGuardiaC.textContent = optNombre;
+      phoneGuardiaC.textContent = phoneOpt
+      break;
+  }
+  
 })
-
-
 
 /*FECHA ACTUAL EN FORMATO ESPAÑOL */
 function dateNow() {
