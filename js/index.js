@@ -42,7 +42,7 @@ const guardC = [
 
 function recorrerArray(array) {
   nombreGuardia.innerHTML = ` <option class="optionStart" selected disable id="Seleccionar">--Seleccionar--</option>`;
-  array.map((arr) => {    
+  array.map((arr) => {
     const creaOption = `<option class="opt__guardia" id="${arr.id}" name="${arr.telefono}" >${arr.nombre}</option>`;
     nombreGuardia.innerHTML += `${creaOption}`;
   });
@@ -54,7 +54,7 @@ function optionGuard() {
 
   switch (valor) {
     case 1:
-      recorrerArray(subtel); 
+      recorrerArray(subtel);
       break;
     case 2:
       recorrerArray(guardB);
@@ -66,43 +66,36 @@ function optionGuard() {
 }
 tipoGuardia.addEventListener("change", optionGuard);
 /* REVISAR */
-nombreGuardia.addEventListener("change",()=>{
+nombreGuardia.addEventListener("change", () => {
   const optionSel = nombreGuardia.options[nombreGuardia.selectedIndex];
   let optId = parseInt(optionSel.id);
   let optNombre = optionSel.value;
   const phoneOpt = optionSel.attributes.name.textContent;
-  console.log(optId)
-  console.log(optNombre)
-  console.log(phoneOpt)
 
   const optionSelect = tipoGuardia.options[tipoGuardia.selectedIndex];
 
   let valor2 = parseInt(optionSelect.id);
-  switch(valor2){
+  switch (valor2) {
     case 1:
-      console.log('Subtel')
-      const nameGuardiaSub = document.querySelector('.card__nombre_Sub')
-      const phoneGuardiaSub = document.querySelector('.card__phone-number_Sub');
+      const nameGuardiaSub = document.querySelector(".card__nombre_Sub");
+      const phoneGuardiaSub = document.querySelector(".card__phone-number_Sub");
       nameGuardiaSub.textContent = optNombre;
-      phoneGuardiaSub.textContent = phoneOpt
+      phoneGuardiaSub.textContent = phoneOpt;
       break;
     case 2:
-      console.log('Guardia B')
-      const nameGuardiaB = document.querySelector('.card__nombre_B')
-      const phoneGuardiaB = document.querySelector('.card__phone-number_B');
+      const nameGuardiaB = document.querySelector(".card__nombre_B");
+      const phoneGuardiaB = document.querySelector(".card__phone-number_B");
       nameGuardiaB.textContent = optNombre;
-      phoneGuardiaB.textContent = phoneOpt
+      phoneGuardiaB.textContent = phoneOpt;
       break;
     case 3:
-      console.log('Guardia C')
-      const nameGuardiaC = document.querySelector('.card__nombre_C')
-      const phoneGuardiaC = document.querySelector('.card__phone-number_C');
+      const nameGuardiaC = document.querySelector(".card__nombre_C");
+      const phoneGuardiaC = document.querySelector(".card__phone-number_C");
       nameGuardiaC.textContent = optNombre;
-      phoneGuardiaC.textContent = phoneOpt
+      phoneGuardiaC.textContent = phoneOpt;
       break;
   }
-  
-})
+});
 
 /*FECHA ACTUAL EN FORMATO ESPAÑOL */
 function dateNow() {
@@ -148,11 +141,8 @@ dateNow();
 /* function pintarCard() {
   const fecha = new Date();
   const dateFormated = fecha.toLocaleDateString();
-  console.log(dateFormated);
-  if (dateFormated === "12/5/2023") {
-    console.log("Fechas son iguales");
-  } else {
-    console.log("Fechas son distintos");
-  }
+    if (dateFormated === "12/5/2023") {
+      } else {
+      }
 }
  */
