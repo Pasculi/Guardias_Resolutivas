@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
-  dateNow();
   listTypeGuard(tipoGuardia);
 });
+
+const formulario = document.querySelector(".formulario");
+const btnEdit = document.querySelector(".header__btn-edit");
+const btnCerrar = document.querySelector(".formulario__btn-cerrar");
+
+const selectGuardia = document.querySelector("#tipo_guardia");
+const selectNombreGuardia = document.querySelector("#nombre_guardia");
+const optionStart = document.querySelector(".optionStart");
 
 const subtel = [
   { id: 21, nombre: "Raul Caulier", telefono: "+56967605441" },
@@ -26,7 +33,122 @@ const guardC = [
 ];
 
 
+function editGuardias() {
+  formulario.style.display = "flex";
+}
+btnEdit.addEventListener("click", editGuardias);
 
+function cerrarGuardias() {
+  formulario.style.display = "none";
+}
+btnCerrar.addEventListener("click", cerrarGuardias);
+
+const listTypeGuard = (tipoGuardia) => {
+  tipoGuardia.map((typeGuard) => {
+    optionGuard = `<option class='name_guardia' id='${typeGuard.id}'>${typeGuard.nombre}</option>`;
+    selectGuardia.innerHTML += optionGuard;
+  });
+  console.log(selectGuardia);
+};
+function optionGuard() {
+  const optionSelect = selectGuardia.options[selectGuardia.selectedIndex];
+  let valor = parseInt(optionSelect.id);
+
+  switch (valor) {
+    case 1:
+      recorrerArray(subtel);
+      break;
+    case 2:
+      recorrerArray(guardB);
+      break;
+    case 3:
+      recorrerArray(guardC);
+      break;
+  }
+}
+
+selectGuardia.addEventListener("change", optionGuard);
+
+function capturarIdGuardia() {
+  const optionSelect =
+    selectNombreGuardia.options[selectNombreGuardia.selectedIndex];
+  let valuer = parseInt(optionSelect.id);
+
+  selectNameGuardia(valuer); /* +++++ */
+  const idGuardia = document.getElementById(`${valuer}`);
+  console.log(idGuardia);
+  console.log(idGuardia.value);
+  console.log(idGuardia.attributes.name.textContent);
+}
+
+
+function recorrerArray(data) {
+  selectNombreGuardia.innerHTML = "";
+  data.map((guardia) => {
+    optionNombreGuard = `<option class='guardia__nombre' name='${guardia.telefono}' id='${guardia.id}'>${guardia.nombre}</option>`;
+    selectNombreGuardia.innerHTML += optionNombreGuard;
+  });
+}
+selectNombreGuardia.addEventListener("change", capturarIdGuardia);
+
+function selectNameGuardia() {
+  const elementoGuardia = Array.from(
+    document.querySelectorAll(".guardia__nombre")
+  );
+
+  elementoGuardia.map((guardia) => {
+    console.log(guardia);
+  });
+}
+
+function cambiarData() {
+  const optionSelect = selectGuardia.options[selectGuardia.selectedIndex];
+  let valor2 = parseInt(optionSelect.id);
+  selectNameGuardia(valor2); /* +++++ */
+  const idGuardia = document.getElementById(`${valor2}`);
+  console.log(idGuardia);
+  console.log(idGuardia.value);
+  console.log(idGuardia.attributes.name.textContent);
+  console.log(valor2)
+  switch (valor2) {
+    case 1:
+      const nameGuardiaSub = document.querySelector(".card__nombre_Sub");
+      const phoneGuardiaSub = document.querySelector(".card__phone-number_Sub");
+      nameGuardiaSub.innerHTML = subtel.nombre;
+      phoneGuardiaSub.innerHTML = subtel.telefono;
+      console.log(idGuardia);
+      console.log(nameGuardiaSub)
+      console.log(phoneGuardiaSub)
+      console.log('opt1')
+      break;
+    case 2:
+      const nameGuardiaB = document.querySelector(".card__nombre_B");
+      const phoneGuardiaB = document.querySelector(".card__phone-number_B");
+      nameGuardiaB.innerHTML =idGuardia.value;
+      phoneGuardiaB.innerHTML = idGuardia.attributes.name.innerHTML;
+      console.log(nameGuardiaB)
+      console.log(phoneGuardiaB)
+      console.log('opt2')
+      break;
+    case 3:
+      const nameGuardiaC = document.querySelector(".card__nombre_C");
+      const phoneGuardiaC = document.querySelector(".card__phone-number_C");
+      nameGuardiaC.innerHTML = guardC.nombre;
+      phoneGuardiaC.innerHTML =idGuardia.attributes.name.textContent;
+      console.log(nameGuardiaC)
+      console.log(phoneGuardiaC)
+      console.log('opt3')
+      break;
+  }
+
+}
+
+
+const btn = document.querySelector('.formulario__btn');
+btn.addEventListener('click', (evt) => {
+  evt.preventDefault()
+  cambiarData()
+})
 
 /*FECHA ACTUAL EN FORMATO ESPAÑOL */
 function dateNow() {
@@ -69,7 +191,6 @@ function dateNow() {
     fecha.getUTCFullYear();
 }
 dateNow();
-
 /* function pintarCard() {
   const fecha = new Date();
   const dateFormated = fecha.toLocaleDateString();
