@@ -68,7 +68,6 @@ tipoGuardia.addEventListener("change", optionGuard);
 /* REVISAR */
 nombreGuardia.addEventListener("change", () => {
   const optionSel = nombreGuardia.options[nombreGuardia.selectedIndex];
-  let optId = parseInt(optionSel.id);
   let optNombre = optionSel.value;
   const phoneOpt = optionSel.attributes.name.textContent;
 
