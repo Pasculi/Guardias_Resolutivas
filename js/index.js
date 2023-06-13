@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {});
+document.addEventListener("DOMContentLoaded", () => {
+  dateNow();
+
+});
 
 const formulario = document.querySelector(".formulario");
 const btnEdit = document.querySelector(".header__btn-edit");
@@ -49,7 +52,6 @@ function recorrerArray(array) {
 }
 function optionGuard() {
   const optionSelect = tipoGuardia.options[tipoGuardia.selectedIndex];
-
   let valor = parseInt(optionSelect.id);
 
   switch (valor) {
@@ -136,7 +138,7 @@ function dateNow() {
     " de " +
     fecha.getUTCFullYear();
 }
-dateNow();
+
 /* function pintarCard() {
   const fecha = new Date();
   const dateFormated = fecha.toLocaleDateString();
