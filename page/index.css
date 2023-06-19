@@ -14,7 +14,7 @@
 @import url('../blocks/container/container.css');
 
 /*HEADER*/
-@import url('../blocks/header//header.css');
+@import url('../blocks/header/header.css');
 @import url('../blocks/header/__logo/header__logo.css');
 @import url('../blocks/header/__btn-edit/header__btn-edit.css');
 @import url('../blocks/header/__fecha/header__fecha.css');
@@ -34,7 +34,7 @@
 
 /*MODAL FORMULARIO*/
 @import url('../blocks/formulario/formulario.css');
-@import url('blocks/formulario/__editar/formulario__editar.css');
+@import url('../blocks/formulario/__editar/formulario__editar.css');
 @import url('../blocks/formulario/__form/formulario__form.css');
 @import url('../blocks/formulario/__selectores/formulario__selectores.css');
 @import url('../blocks/formulario/__btn-cerrar/formulario__btn-cerrar.css');
