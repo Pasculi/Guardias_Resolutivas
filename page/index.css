@@ -1,11 +1,11 @@
 /*NORMALIZE*/
-@import url('../vendor/normalize.css');
+@import url('/vendor/normalize.css');
 
 /*VARABLES*/
-@import url('../vendor/variables.css');
+@import url('/vendor/variables.css');
 
 /*FONTS*/
-@import url('../fonts/normalize.css');
+@import url('/fonts/normalize.css');
 
 /*ROOT*/
 @import url('../blocks/root/root.css');
