@@ -15,7 +15,7 @@
 
 /*HEADER*/
 @import url(../blocks/header/header.css);
-@import url(/blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/header/__btn-edit/header__btn-edit.css);
 @import url(../blocks/header/__fecha/header__fecha.css);
 
