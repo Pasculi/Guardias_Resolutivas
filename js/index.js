@@ -26,7 +26,7 @@ const subtel = [
   { id: 22, nombre: "Manuel Araneda", telefono: "+56967603409" },
   { id: 23, nombre: "Patricio Ortega", telefono: "+5697391120" },
   { id: 4, nombre: "Erwin Eggers", telefono: "+56983410816" },
-  { id: 5, nombre: "Daniel Cayuñir", telefono: "+56988888888" },
+  { id: 5, nombre: "Daniel Cayuñir", telefono: "+56967614473" },
 ];
 const guardB = [
   { id: 6, nombre: "Andrea Burgos", telefono: "+56967603275" },
