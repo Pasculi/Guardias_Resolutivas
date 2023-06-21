@@ -14,10 +14,10 @@
 @import url(../blocks/container/container.css);
 
 /*HEADER*/
-@import url(../blocks/header/header.css);
-@import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__btn-edit/header__btn-edit.css);
-@import url(../blocks/header/__fecha/header__fecha.css);
+@import url('../blocks/header/header.css');
+@import url('../blocks/header/__logo/header__logo.css');
+@import url('../blocks/header/__btn-edit/header__btn-edit.css');
+@import url('../blocks/header/__fecha/header__fecha.css');
 
 /*MAIN*/
 @import url(../blocks/main/main.css);
@@ -40,8 +40,6 @@
 @import url(../blocks/formulario/__btn-cerrar/formulario__btn-cerrar.css);
 @import url(../blocks/formulario/__btn/formulario__btn.css);
 
-
-
 /*FOOTER*/
 @import url(../blocks/footer/footer.css);
 
@@ -50,6 +48,3 @@
 @import url(../blocks/banner/__logo/banner__logo.css);
 @import url(../blocks/banner/__logo/banner__logo-telsur.css);
 @import url(../blocks/banner/__logo/banner__logo-principal.css);
-
-
-@import url(/blocks/header/__logo/header__logo.css);
