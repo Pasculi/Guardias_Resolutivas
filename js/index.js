@@ -24,7 +24,7 @@ btnCerrar.addEventListener("click", cerrarGuardias);
 const subtel = [
   { id: 21, nombre: "Raul Caulier", telefono: "+56967605441" },
   { id: 22, nombre: "Manuel Araneda", telefono: "+56967603409" },
-  { id: 23, nombre: "Patricio Ortega", telefono: "+5697391120" },
+  { id: 23, nombre: "Patricio Ortega", telefono: "+56997391120" },
   { id: 4, nombre: "Erwin Eggers", telefono: "+56983410816" },
   { id: 5, nombre: "Daniel Cayuñir", telefono: "+56967614473" },
 ];
@@ -37,9 +37,9 @@ const guardB = [
 const guardC = [
   { id: 10, nombre: "Rodrigo Soriano", telefono: "+56982661596" },
   { id: 11, nombre: "Mario Colihueque", telefono: "+56967604831" },
-  { id: 12, nombre: "Oscar Vivar", telefono: "+5697391175" },
-  { id: 13, nombre: "Ricardo Riebel", telefono: "+5698282252" },
-  { id: 14, nombre: "Patricio Ortega", telefono: "+5697391120" },
+  { id: 12, nombre: "Oscar Vivar", telefono: "+56997391175" },
+  { id: 13, nombre: "Ricardo Riebel", telefono: "+56998282252" },
+  { id: 14, nombre: "Patricio Ortega", telefono: "+56997391120" },
   { id: 15, nombre: "Marcelo Sandoval", telefono: "+56997391027" },
 ];
 
