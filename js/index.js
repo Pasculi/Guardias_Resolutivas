@@ -1,14 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
   dateNow();
   leerLocalStorage();
- });
 
-// Función actualizar
-function actualizar() {
-  location.reload(true)
+});
+ //Funcion para recargar la página a las 24:00:00
+window.onload = actualizarPagina();
+
+function actualizarPagina() {
+  let actualizar = false;
+  momentoActual = new Date();
+  hora = momentoActual.getHours();
+  minuto = momentoActual.getMinutes();
+  segundo = momentoActual.getSeconds();
+
+  str_segundo = new String(segundo);
+  if (str_segundo.length == 1) {
+    segundo = "0" + segundo;
+  }
+  str_minuto = new String(minuto);
+  if (str_minuto.length == 1) {
+    minuto = "0" + minuto;
+  }
+  str_hora = new String(hora);
+  if (str_hora.length == 1) {
+    hora = "0" + hora;
+  }
+  horaImprimible = hora + ":" + minuto + ":" + segundo;
+  if (horaImprimible == "24:00:00") {
+    actualizar = true;
+  }
+  setTimeout("actualizarPagina()", 1000);
+  if (actualizar == true) {//Comprueba que la hora es igual a la que se seteo
+    location.reload();
+  }
 }
-// Función para actualizar cada 4 segundos(4000 milisegundos)
-setInterval("actualizar()", 61200000);
+
 
 const formulario = document.querySelector(".formulario");
 const btnEdit = document.querySelector(".header__btn-edit");
